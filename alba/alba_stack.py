@@ -36,6 +36,7 @@ class AlbaStack(Stack):
                                assumed_by=iam.ServicePrincipal('ec2.amazonaws.com'),
                                managed_policies=
                                    [iam.ManagedPolicy.from_aws_managed_policy_name('AmazonS3ReadOnlyAccess'),
+                                    iam.ManagedPolicy.from_aws_managed_policy_name('AmazonSSMManagedInstanceCore'),
                                     iam.ManagedPolicy.from_aws_managed_policy_name('AmazonSageMakerFullAccess')]) 
         
         host = ec2.Instance(
